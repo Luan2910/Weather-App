@@ -5,7 +5,7 @@ import rain_icon from '../assets/rain.png'
 import snow_icon from '../assets/snow.png'
 import thunderstorm_icon from '../assets/thunderstorm.png'
 
-const iconsRef = {
+const iconsfile = {
     "01d":sun_icon,
     "01n":sun_icon,
     "02d":cloud_icon,
@@ -24,4 +24,4 @@ const iconsRef = {
     "13n":snow_icon,
 }
 
-export default iconsRef;
+export default iconsfile;

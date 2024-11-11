@@ -1,0 +1,31 @@
+.search-title h1 {
+    color: #fff;
+    margin-top: 3rem;
+}
+.search-cards{
+    display: flex;
+    place-self: start;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.search-card{
+    background-image: linear-gradient(45deg, #80ca86, #6dc9e2);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.weather-info{
+    display: flex;
+    font-size: 20px;
+    color: #fff;
+    margin: 0px 10px;
+    flex-direction: column;
+}
+.search-card img{
+    width: 100px;
+    height: 100px;
+}
+

@@ -3,46 +3,15 @@ import './Weather.css';
 import search_icon from '../assets/search.png';
 import humidity_icon from '../assets/humidity.png';
 import wind_icon from '../assets/wind.png'
-import iconsRef from './iconsRef';
+import iconsfile from './iconsfile';
 
-const Weather = () => {
+const Weather = ({search, weatherData}) => {
 
     const inputRef = useRef();
-    const [weatherData, setWeatherData] = useState(false);
-
-    const allIcons = iconsRef;
-
-    const search = async (city)=>{
-        if(city === ""){
-            alert("Please, enter a city name.");
-            return;
-        }
-        try {
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`
-            const response = await fetch(url);
-            const data = await response.json();
-            
-            if(!response.ok){
-                alert(data.message);
-                return;
-            }
-
-            const icon = allIcons[data.weather[0].icon] || sun_icon;
-            setWeatherData({
-                humidity: data.main.humidity,
-                windSpeed: data.wind.speed,
-                temperature: Math.floor(data.main.temp),
-                location: data.name,
-                icon: icon
-            })
-        } catch (error) {
-            setWeatherData(false);
-            console.error("Error in fetching weather data.");
-        }
-    }
 
     useEffect(()=>{
         search("London");
+        inputRef.current.focus();
     },[])
 
   return (
